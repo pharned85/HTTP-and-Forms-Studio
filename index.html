@@ -4,8 +4,17 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
+		const handleSetSearchEngine = () => {
+			const form = document.getElementByID('searchForm');
+			const selectedEngine = document.querySelector('inpur[name=engine]:checked');
+			const searchTerm = document.querySelector('input[name=q]'};
+			console.log(searchterm);
+
+
+   		window.addEventListener("load", function(){
+			const form = document.getElementById('searchForm')
+			form.addEventListener('submit', handleSetSearchEngine)
+		// TODO: register the handler
     });
 	</script>
 </head>
@@ -14,6 +23,27 @@
 
 	<form id="searchForm">
     <!-- TODO: add form elements -->
+	<div>
+	<input name="q" type = "text"/>
+	</div>
+	
+	<div>
+		<label><input type="radio" name="engine" value="DuckDuckGo"/>Duck Duck Go</label>
+		<label><input type="radio" name="engine" value="Google"/>Google</label>
+		<label><input type="radio" name="engine" value="Bing"/>Bing</label>
+		<label><input type="radio" name="engine" value="Ask"/>Ask</label>
+	</div>
+
+	<button><input type="submit" value="Go!"/>Go!</button>
+
+
+
+
+
+
+
+
+
 	</form>
 
 </body>
