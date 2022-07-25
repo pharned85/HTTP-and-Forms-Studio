@@ -4,12 +4,21 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
-		const handleSetSearchEngine = () => {
+		const handleSetSearchEngine = (e) => {
 			const form = document.getElementByID('searchForm');
-			const selectedEngine = document.querySelector('inpur[name=engine]:checked');
-			const searchTerm = document.querySelector('input[name=q]'};
-			console.log(searchterm);
+			const selectedEngine = document.querySelector('input[name=engine]:checked');
+			const searchTerm = document.querySelector('input[name=q]').value;
+			
+			if(searchTerm.trim() === ''){
+				e.preventDefault();
+				alert('Please enter a search term!');
+				return;
+			}
 
+			form.setAttribute('action', action)
+
+			e.preventDefault();
+		}
 
    		window.addEventListener("load", function(){
 			const form = document.getElementById('searchForm')
@@ -34,15 +43,7 @@
 		<label><input type="radio" name="engine" value="Ask"/>Ask</label>
 	</div>
 
-	<button><input type="submit" value="Go!"/>Go!</button>
-
-
-
-
-
-
-
-
+	<input type="submit" value="Go!"/>
 
 	</form>
 
